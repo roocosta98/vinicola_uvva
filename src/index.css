@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-uvva-brown: var(--uvva-brown);
+  --color-uvva-brown-dark: var(--uvva-brown-dark);
+  --color-uvva-brown-light: var(--uvva-brown-light);
+  --color-uvva-gold: var(--uvva-gold);
+  --color-uvva-gold-dark: var(--uvva-gold-dark);
+  --color-uvva-gold-light: var(--uvva-gold-light);
+  --color-uvva-beige: var(--uvva-beige);
+  --color-uvva-beige-light: var(--uvva-beige-light);
+
+  --font-title: "Moneta", "Bodoni Moda", serif;
+  --font-section: "Proxima", "Proxima Nova", "Montserrat", sans-serif;
+  --font-body: "Proxima", "Proxima Nova", "Montserrat", sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark light;
+    
+    /* DEFAULT DARK THEME VARIABLES */
+    --uvva-brown: #1c1514;
+    --uvva-brown-dark: #140f0e;
+    --uvva-brown-light: #2d2220;
+    --uvva-gold: #c5a880;
+    --uvva-gold-dark: #b3956d;
+    --uvva-gold-light: #d7c0a0;
+    --uvva-beige: #f2ebd9;
+    --uvva-beige-light: #faf6eb;
+    
+    --uvva-text: #fcfbf9;
+    --uvva-text-muted: rgba(252, 251, 249, 0.6);
+    --uvva-text-muted-more: rgba(252, 251, 249, 0.4);
+    --uvva-card-bg: rgba(255, 255, 255, 0.03);
+    --uvva-border: rgba(197, 168, 128, 0.1);
+    --uvva-glass-header-bg: rgba(28, 21, 20, 0.75);
+    --uvva-glass-button-bg: rgba(255, 255, 255, 0.05);
+    --uvva-body-bg: #1c1514;
+    --uvva-scrollbar-track: #140f0e;
+  }
+  
+  :root.light {
+    /* LUXURY LIGHT PASTEL THEME VARIABLES (BEIGE & CHAMPAGNE TONES) */
+    --uvva-brown: #F5EFE2;          /* Rich luxury warm champagne beige background */
+    --uvva-brown-dark: #E6DCC8;     /* Premium contrasting warm sand/beige for sections/cards */
+    --uvva-brown-light: #FAF7F2;    /* Soft warm cream light highlight */
+    
+    --uvva-gold: #967C52;           /* Deeper gold for readable contrast on beige */
+    --uvva-gold-dark: #7A633F;      /* Rich dark gold */
+    --uvva-gold-light: #BCA374;     /* Medium-light gold */
+    
+    --uvva-beige: #DECDB0;          /* Warm clay pastel */
+    --uvva-beige-light: #EDE3CF;    /* Soft beige sand */
+    
+    --uvva-text: #2D2220;           /* Elegant dark coffee text */
+    --uvva-text-muted: rgba(45, 34, 32, 0.75);
+    --uvva-text-muted-more: rgba(45, 34, 32, 0.5);
+    
+    --uvva-card-bg: rgba(250, 245, 235, 0.8);  /* Warm luxury card background in beige mode */
+    --uvva-border: rgba(150, 124, 82, 0.25);    /* Rich gold border */
+    --uvva-glass-header-bg: rgba(245, 239, 226, 0.9); /* Smooth warm glass header background */
+    --uvva-glass-button-bg: rgba(45, 34, 32, 0.06);
+    --uvva-body-bg: #F5EFE2;
+    --uvva-scrollbar-track: #E6DCC8;
+    
+    /* CLASS OVERRIDES FOR HARDCODED HEX VALUES */
+    
+    /* Force Header to be always glass-header visible when loaded initially in light mode */
+    header {
+      background: var(--uvva-glass-header-bg) !important;
+      border-bottom: 1px solid var(--uvva-border) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+    }
+    header * {
+      /* Keep header navigation items/icons properly colored in light mode */
+      color: var(--uvva-text) !important;
+    }
+    header button, header a {
+      color: var(--uvva-text) !important;
+    }
+    header button:hover, header a:hover {
+      color: var(--uvva-gold) !important;
+    }
+
+    /* bg-[#1c1514] overrides (main dark brown background to champagne beige) */
+    .bg-\[\#1c1514\] {
+      background-color: var(--uvva-brown) !important;
+    }
+    .bg-\[\#1c1514\]\/5 {
+      background-color: rgba(45, 34, 32, 0.05) !important;
+    }
+    .bg-\[\#1c1514\]\/10 {
+      background-color: rgba(45, 34, 32, 0.1) !important;
+    }
+    .bg-\[\#1c1514\]\/20 {
+      background-color: rgba(230, 220, 200, 0.2) !important;
+    }
+    .bg-\[\#1c1514\]\/30 {
+      background-color: rgba(230, 220, 200, 0.3) !important;
+    }
+    .bg-\[\#1c1514\]\/40 {
+      background-color: rgba(230, 220, 200, 0.4) !important;
+    }
+    .bg-\[\#1c1514\]\/50 {
+      background-color: rgba(230, 220, 200, 0.5) !important;
+    }
+    .bg-\[\#1c1514\]\/60 {
+      background-color: rgba(245, 239, 226, 0.6) !important;
+    }
+    .bg-\[\#1c1514\]\/65 {
+      background-color: rgba(245, 239, 226, 0.65) !important;
+      backdrop-filter: blur(4px) !important;
+    }
+    .bg-\[\#1c1514\]\/70 {
+      background-color: rgba(245, 239, 226, 0.7) !important;
+    }
+    .bg-\[\#1c1514\]\/75 {
+      background-color: rgba(245, 239, 226, 0.75) !important;
+    }
+    .bg-\[\#1c1514\]\/80 {
+      background-color: rgba(245, 239, 226, 0.8) !important;
+    }
+    .bg-\[\#1c1514\]\/85 {
+      background-color: rgba(245, 239, 226, 0.85) !important;
+    }
+    .bg-\[\#1c1514\]\/90 {
+      background-color: rgba(245, 239, 226, 0.9) !important;
+    }
+    .bg-\[\#1c1514\]\/95 {
+      background-color: rgba(245, 239, 226, 0.95) !important;
+    }
+
+    /* bg-[#140f0e] overrides (card background to warm sand beige) */
+    .bg-\[\#140f0e\] {
+      background-color: var(--uvva-brown-dark) !important;
+    }
+    .bg-\[\#140f0e\]\/5 {
+      background-color: rgba(45, 34, 32, 0.05) !important;
+    }
+    .bg-\[\#140f0e\]\/10 {
+      background-color: rgba(45, 34, 32, 0.1) !important;
+    }
+    .bg-\[\#140f0e\]\/20 {
+      background-color: rgba(230, 220, 200, 0.2) !important;
+    }
+    .bg-\[\#140f0e\]\/30 {
+      background-color: rgba(230, 220, 200, 0.3) !important;
+    }
+    .bg-\[\#140f0e\]\/40 {
+      background-color: rgba(230, 220, 200, 0.4) !important;
+    }
+    .bg-\[\#140f0e\]\/50 {
+      background-color: rgba(230, 220, 200, 0.5) !important;
+    }
+    .bg-\[\#140f0e\]\/60 {
+      background-color: rgba(230, 220, 200, 0.6) !important;
+    }
+    .bg-\[\#140f0e\]\/70 {
+      background-color: rgba(230, 220, 200, 0.7) !important;
+    }
+    .bg-\[\#140f0e\]\/75 {
+      background-color: rgba(230, 220, 200, 0.75) !important;
+    }
+    .bg-\[\#140f0e\]\/80 {
+      background-color: rgba(230, 220, 200, 0.8) !important;
+    }
+    .bg-\[\#140f0e\]\/85 {
+      background-color: rgba(230, 220, 200, 0.85) !important;
+    }
+    .bg-\[\#140f0e\]\/90 {
+      background-color: rgba(230, 220, 200, 0.9) !important;
+    }
+    .bg-\[\#140f0e\]\/95 {
+      background-color: rgba(230, 220, 200, 0.95) !important;
+    }
+
+    .bg-\[\#fcfbf9\] {
+      background-color: var(--uvva-brown-light) !important;
+    }
+    .bg-\[\#f5f2ee\] {
+      background-color: var(--uvva-brown-light) !important;
+    }
+    
+    /* text-[#fcfbf9] overrides to elegant dark coffee text with opacities */
+    .text-\[\#fcfbf9\] {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/95 {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/90 {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/85 {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/80 {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/75 {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#fcfbf9\]\/70 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#fcfbf9\]\/65 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#fcfbf9\]\/60 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#fcfbf9\]\/55 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#fcfbf9\]\/50 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#fcfbf9\]\/45 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+    .text-\[\#fcfbf9\]\/40 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+    .text-\[\#fcfbf9\]\/30 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+    .text-\[\#fcfbf9\]\/20 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+
+    .text-\[\#1c1514\] {
+      color: var(--uvva-text) !important;
+    }
+    .text-\[\#1c1514\]\/40 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+    .text-\[\#1c1514\]\/50 {
+      color: var(--uvva-text-muted-more) !important;
+    }
+    .text-\[\#1c1514\]\/60 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#1c1514\]\/65 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#1c1514\]\/70 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#1c1514\]\/75 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .text-\[\#1c1514\]\/80 {
+      color: var(--uvva-text) !important;
+    }
+    
+    /* border overrides */
+    .border-\[\#e8e2d9\] {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-\[\#e8e2d9\]\/30 {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-\[\#f0ede8\] {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-l-\[\#c5a880\]\/35 {
+      border-left-color: var(--uvva-border) !important;
+    }
+    
+    .border-\[\#fcfbf9\]\/15 {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-\[\#fcfbf9\]\/30 {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-\[\#fcfbf9\]\/40 {
+      border-color: var(--uvva-border) !important;
+    }
+    .border-\[\#fcfbf9\]\/45 {
+      border-color: var(--uvva-border) !important;
+    }
+    
+    .glass-card {
+      background: var(--uvva-card-bg) !important;
+      border-color: var(--uvva-border) !important;
+    }
+    .glass-header {
+      background: var(--uvva-glass-header-bg) !important;
+      border-bottom: 1px solid var(--uvva-border) !important;
+    }
+    
+    /* Inputs style in light mode */
+    input, select, textarea {
+      color: var(--uvva-text) !important;
+      background-color: rgba(255, 255, 255, 0.75) !important;
+      border-color: var(--uvva-border) !important;
+    }
+    
+    input::placeholder {
+      color: var(--uvva-text-muted-more) !important;
+    }
+
+    /* HARDCODED BROWN #28201f OVERRIDES */
+    .bg-\[\#28201f\] {
+      background-color: var(--uvva-brown-dark) !important;
+    }
+    .bg-gradient-to-b.from-\[\#fcfbf9\].to-\[\#28201f\] {
+      background-image: linear-gradient(to bottom, var(--uvva-brown-light) 50%, var(--uvva-brown-dark) 50%) !important;
+    }
+
+    /* TEXT CONTRAST CORRECTIONS IN LIGHT MODE */
+    .bg-\[\#1c1514\] .text-white {
+      color: var(--uvva-text) !important;
+    }
+    .bg-\[\#1c1514\] .text-white\/70 {
+      color: var(--uvva-text-muted) !important;
+    }
+    .bg-\[\#28201f\] .text-white {
+      color: var(--uvva-text) !important;
+    }
+    .bg-\[\#28201f\] .text-white\/70 {
+      color: var(--uvva-text-muted) !important;
+    }
+
+    /* PREMIUM LIGHT IMAGE OVERLAYS FOR CAROUSELS AND SLIDERS */
+    .bg-gradient-to-t.from-\[\#1c1514\].via-\[\#1c1514\]\/80.to-transparent {
+      background-image: linear-gradient(to top, rgba(245, 239, 226, 0.98) 0%, rgba(245, 239, 226, 0.8) 50%, transparent 100%) !important;
+    }
+    .bg-gradient-to-t.from-\[\#1c1514\].via-\[\#1c1514\]\/85.to-transparent {
+      background-image: linear-gradient(to top, rgba(245, 239, 226, 0.98) 0%, rgba(245, 239, 226, 0.85) 50%, transparent 100%) !important;
+    }
+    .bg-gradient-to-t.from-\[\#1c1514\]\/65.via-transparent.to-\[\#1c1514\]\/20 {
+      background-image: linear-gradient(to top, rgba(245, 239, 226, 0.35) 0%, transparent 50%, rgba(245, 239, 226, 0.1) 100%) !important;
+    }
+
+    /* KEEP-DARK UTILITY FOR CINEMATIC HERO & BANNER SECTIONS */
+    .keep-dark .text-\[\#fcfbf9\] {
+      color: #fcfbf9 !important;
+    }
+    .keep-dark .text-\[\#fcfbf9\]\/75 {
+      color: rgba(252, 251, 249, 0.75) !important;
+    }
+    .keep-dark .text-\[\#fcfbf9\]\/70 {
+      color: rgba(252, 251, 249, 0.7) !important;
+    }
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: var(--uvva-body-bg);
+    color: var(--uvva-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  body {
+    background-color: var(--uvva-body-bg);
+    color: var(--uvva-text);
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Custom high-end scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--uvva-scrollbar-track);
+    transition: background-color 0.4s ease;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--uvva-gold);
+    border-radius: 4px;
+    transition: background-color 0.4s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--uvva-gold-dark);
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-header {
+  background: var(--uvva-glass-header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+.glass-card {
+  background: var(--uvva-card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--uvva-border);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+.glass-button {
+  background: var(--uvva-glass-button-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--uvva-border);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--uvva-gold);
+}
+
+/* Custom premium hover and animation effects */
+.gold-glow-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.35);
+  border-color: var(--uvva-gold);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--uvva-beige) 0%, var(--uvva-gold) 50%, var(--uvva-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
